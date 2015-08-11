@@ -1,6 +1,16 @@
 {
   "name": "ngCalendar",
-  "version": "0.0.0",
+  "main": [
+    "dist/ng-calendar.js"
+  ],
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "angular"
+  ],
   "homepage": "https://github.com/udacity/ngCalendar",
   "authors": [
     "Hendrixer <willscottmoss@gmail.com>"
@@ -11,6 +21,12 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "src",
+    "demo",
+    "webpack.config.js",
+    "webpack.configMinify.js",
+    "Gulpfile.js",
+    "karma.conf.js"
   ]
 }
