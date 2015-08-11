@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body ng-controller="App">
+
+	<script src="../node_modules/angular/angular.js"></script>
+  <script src="../dist/ng-calendar.js"></script>
+  <script>
+    angular.module('app', ['ngCalendar'])
+      .controller('App', function(Calendar) {
+        var calEvent = {start: new Date(), title: 'this is a demo'};
+
+        console.log('ical', Calendar.ical([calEvent, calEvent, calEvent]));
+        console.log('outlook', Calendar.outlook(calEvent));
+        console.log('google', Calendar.google(calEvent));
+        console.log('yahoo', Calendar.yahoo(calEvent));
+      });
+  </script>
+</body>
+</html>

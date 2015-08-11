@@ -1,0 +1,38 @@
+{
+  "name": "ngCalendar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "test": "karma start",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/udacity/ngCalendar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/udacity/ngCalendar/issues"
+  },
+  "homepage": "https://github.com/udacity/ngCalendar",
+  "devDependencies": {
+    "angular": "^1.4.3",
+    "babel-core": "^5.8.21",
+    "babel-loader": "^5.3.2",
+    "gulp": "^3.9.0",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.8",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.6",
+    "karma-mocha-reporter": "^1.1.1",
+    "karma-sinon": "^1.0.4",
+    "karma-sourcemap-loader": "^0.3.5",
+    "karma-webpack": "^1.7.0",
+    "run-sequence": "^1.1.2",
+    "sinon": "^1.15.4",
+    "webpack": "^1.11.0",
+    "webpack-stream": "^2.1.0"
+  }
+}
