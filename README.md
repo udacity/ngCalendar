@@ -8,7 +8,7 @@
 `ngCalendar` was developed with ES2015 and an `UMD` approach, so it will work in any environment, browser, node, AMD, commonjs, ES2015 modules. To install you can use `npm` or bower.
 
 * `npm i -S udacity/ngCalendar`
-* `bower i --save https://github.com/udacity/ngCalendar.git#0.0.1`
+* `bower i --save https://github.com/udacity/ngCalendar.git#0.0.3`
 
 Once installed, you have to make sure you have angular loaded first then add the `ngCalendar` module:
 ``` javascript
