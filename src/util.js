@@ -36,7 +36,32 @@ export const calculateEndTime = ({end, start, duration=0}) => {
 export const createIcsStringFromEvent = (event) => {
   const startTime = formatTime(event.start);
   const endTime = calculateEndTime(event);
-  const href = `BEGIN:VEVENT\nURL:${document.URL}\nDTSTART:${startTime || ''}\nDTEND:${endTime || ''}\nSUMMARY:${event.title || ''}\nDESCRIPTION:${event.description || ''}\nLOCATION:${event.address || ''}\nEND:VEVENT`;
+  const {recurring} = event;
+
+  let recurringString = '';
+
+  if (recurring) {
+    recurringString = `RRULE:`;
+
+    if (recurring.freq) {
+      recurringString += `FREQ=${recurring.freq}`;
+    }
+
+    if (recurring.interval) {
+      recurringString += `;INTERVAL=${recurring.interval}`;
+    }
+
+    if (recurring.count) {
+      recurringString += `;COUNT=${recurring.count}`;
+    }
+
+    if (recurring.byday) {
+      recurringString += `;BYDAY=${recurring.byday}TH`;
+    }
+    recurringString += '\n';
+  }
+
+  const href = `BEGIN:VEVENT\nURL:${document.URL}\nDTSTART:${startTime || ''}\nDTEND:${endTime || ''}\nSUMMARY:${event.title || ''}\n${recurringString}DESCRIPTION:${event.description || ''}\nLOCATION:${event.address || ''}\nEND:VEVENT`;
   return href;
 };
 
