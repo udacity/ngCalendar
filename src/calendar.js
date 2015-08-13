@@ -54,7 +54,7 @@ export const calendar = () => {
   };
 
   /**
-   * create .ics file for mac calendar
+   * create .ics file for Mac calendar
    * @param  {[type]} events [description]
    * @return {[type]}        [description]
    */
@@ -63,7 +63,7 @@ export const calendar = () => {
   };
 
   /**
-   * create .ics file for outlook calendar
+   * create .ics file for Outlook calendar
    * @param  {[type]} events [description]
    * @return {[type]}        [description]
    */

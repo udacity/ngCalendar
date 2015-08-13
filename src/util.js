@@ -26,8 +26,8 @@ export const calculateEndTime = ({end, start, duration=0}) => {
 };
 
 /**
- * Given one calendar event, will create am EVENT string ready
- * to be mashed with a full .ics download string. Helpfull when adding
+ * Given one calendar event, will create an EVENT string ready
+ * to be mashed with a full .ics download string. Helpful when adding
  * multiple events to one .ics file
  * @param  {Object} event calendar event object
  * @return {String}       one EVENT string produced to be combined with
