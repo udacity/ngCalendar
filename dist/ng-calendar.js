@@ -222,7 +222,32 @@ return /******/ (function(modules) { // webpackBootstrap
 	var createIcsStringFromEvent = function createIcsStringFromEvent(event) {
 	  var startTime = formatTime(event.start);
 	  var endTime = calculateEndTime(event);
-	  var href = 'BEGIN:VEVENT\nURL:' + document.URL + '\nDTSTART:' + (startTime || '') + '\nDTEND:' + (endTime || '') + '\nSUMMARY:' + (event.title || '') + '\nDESCRIPTION:' + (event.description || '') + '\nLOCATION:' + (event.address || '') + '\nEND:VEVENT';
+	  var recurring = event.recurring;
+	
+	  var recurringString = '';
+	
+	  if (recurring) {
+	    recurringString = 'RRULE:';
+	
+	    if (recurring.freq) {
+	      recurringString += 'FREQ=' + recurring.freq;
+	    }
+	
+	    if (recurring.interval) {
+	      recurringString += ';INTERVAL=' + recurring.interval;
+	    }
+	
+	    if (recurring.count) {
+	      recurringString += ';COUNT=' + recurring.count;
+	    }
+	
+	    if (recurring.byday) {
+	      recurringString += ';BYDAY=' + recurring.byday + 'TH';
+	    }
+	    recurringString += '\n';
+	  }
+	
+	  var href = 'BEGIN:VEVENT\nURL:' + document.URL + '\nDTSTART:' + (startTime || '') + '\nDTEND:' + (endTime || '') + '\nSUMMARY:' + (event.title || '') + '\n' + recurringString + 'DESCRIPTION:' + (event.description || '') + '\nLOCATION:' + (event.address || '') + '\nEND:VEVENT';
 	  return href;
 	};
 	
