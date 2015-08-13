@@ -1,11 +1,11 @@
 # ngCalendar
 
-> add to calendar factory useful for adding events to popular calendars
-> like iCal, google calendar, outlook, and Yahoo
+> Add to calendar factory useful for adding events to popular calendars
+> like iCal, Google calendar, Outlook, and Yahoo
 
 ## Getting Started
 
-`ngCalendar` was developed with ES2015 and an `UMD` approach, so it will work in any environment, browser, node, AMD, commonjs, ES2015 modules. To install you can use `npm` or bower.
+`ngCalendar` was developed with ES2015 and an `UMD` approach, so it will work in any environment: Browser, node, AMD, commonjs, ES2015 modules. To install you can use `npm` or bower.
 
 * `npm i -S udacity/ngCalendar`
 * `bower i --save https://github.com/udacity/ngCalendar.git#0.0.4`
@@ -16,7 +16,7 @@ angular.module('app', ['ngCalendar']);
 ```
 
 ## Usage
-ngCalendar comes packed with the ability to generate links to either download `.ics` files or embed calendar events into web claendars. First you need to create a calendar event.
+ngCalendar comes packed with the ability to generate links to either download `.ics` files or embed calendar events into web calendars. First you need to create a calendar event.
 
 * `event.start <Date>`: when the event starts. `REQUIRED`
 * `event.end <Date>`: when the event ends. `OPTIONAL`
@@ -32,7 +32,7 @@ var calEvent = {
     duration: 0,
     addresss: '',
     title: 'This is an event',
-    description: 'this is s a demo event'
+    description: 'this is a demo event'
 };
 ```
 Now that you have an event, you can create a link to embed or download using the helper methods on the `Calendar` service.
@@ -43,10 +43,10 @@ angular.module('app', ['ngCalendar'])
     });
 ```
 * `Calendar.google(<Object:cal event>)`
-    *   takes a calendar event and returns a `url` that when opened will route to google calendar with a new calendar event filled out with the given details.
+    * takes a calendar event and returns a `url` that when opened will route to Google calendar with a new calendar event filled out with the given details.
 
 * `Calendar.yahoo(<Object:cal event>)`
-    * takes a calendar event and returns a `url` that when opened will route to yahoo calendar with a new calendar event filled out with the given details.
+    * takes a calendar event and returns a `url` that when opened will route to Yahoo calendar with a new calendar event filled out with the given details.
 
 * `Calendar.ical(<Array:cal events>|<Object:cal event>)`
     * takes a single or an array of calendar events and returns a `data uri` then when opened will download an `.ics` file ready for import with `iCal`. 
